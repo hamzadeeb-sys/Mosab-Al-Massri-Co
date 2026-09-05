@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا | مصعب المصري - Contact</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { green: '#0f382c', greenDark: '#0a271f', gold: '#c59b58', goldLight: '#ddb372', sand: '#f6f4ee', charcoal: '#222826' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html[lang="ar"] { font-family: 'Cairo', sans-serif; }
+        html[lang="en"] { font-family: 'Plus Jakarta Sans', sans-serif; }
+        html[lang="ar"] .en-text { display: none !important; }
+        html[lang="en"] .ar-text { display: none !important; }
+    </style>
+</head>
+<body class="bg-brand-sand text-brand-charcoal flex flex-col min-h-screen">
+
+    <header class="bg-brand-greenDark/95 border-b border-brand-gold/20 sticky top-0 z-50 text-white">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="MA Logo.png" alt="Logo" class="h-12 w-auto object-contain"> 
+                <div>
+                    <span class="text-xl font-bold tracking-wide text-brand-gold block leading-none">MOSAB ALMASRI</span>
+                    <span class="text-[10px] text-gray-300 tracking-widest uppercase">Real Estate</span>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                <a href="index.html" class="hover:text-brand-gold transition"><span class="ar-text">الرئيسية</span><span class="en-text">Home</span></a>
+                <a href="projects.html" class="hover:text-brand-gold transition"><span class="ar-text">المشاريع</span><span class="en-text">Projects</span></a>
+                <a href="services.html" class="hover:text-brand-gold transition"><span class="ar-text">الخدمات</span><span class="en-text">Services</span></a>
+                <a href="about.html" class="hover:text-brand-gold transition"><span class="ar-text">من نحن</span><span class="en-text">About Us</span></a>
+                <!-- الرابط المفعّل -->
+                <a href="contact.html" class="text-brand-gold"><span class="ar-text">تواصل معنا</span><span class="en-text">Contact</span></a>
+            </nav>
+            <button onclick="toggleLanguage()" class="border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-greenDark px-3 py-1.5 rounded text-xs font-bold transition">
+                <span class="ar-text">English</span><span class="en-text">عربي</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-5xl mx-auto px-6 py-16 w-full">
+        <div class="text-center mb-12">
+            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest bg-brand-green px-3 py-1 rounded">
+                <span class="ar-text">نحن بانتظارك</span><span class="en-text">Get in Touch</span>
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-black text-brand-green mt-3">
+                <span class="ar-text">تواصل مع مستشارنا العقاري</span>
+                <span class="en-text">Contact Our Real Estate Advisor</span>
+            </h1>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-md p-8 sm:p-12 grid grid-cols-1 md:grid-cols-2 gap-10">
+            
+            <!-- معلومات الاتصال المباشرة -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-brand-green">
+                    <span class="ar-text">القنوات المباشرة</span>
+                    <span class="en-text">Direct Channels</span>
+                </h3>
+
+                <!-- الاتصال الهاتفي (عدل رقمك هنا) -->
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500"><span class="ar-text">الهاتف</span><span class="en-text">Phone</span></p>
+                        <p class="font-bold" dir="ltr">+963 900 000 000</p>
+                    </div>
+                </div>
+
+                <!-- واتساب مباشر (عدل رقمك هنا) -->
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center text-lg">
+                        <i class="fa-brands fa-whatsapp text-green-600"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500">WhatsApp</p>
+                        <a href="https://wa.me/963900000000" target="_blank" class="font-bold text-green-700 hover:underline" dir="ltr">+963 900 000 000</a>
+                    </div>
+                </div>
+
+                <!-- البريد الإلكتروني (عدل إيميلك هنا) -->
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500"><span class="ar-text">البريد الإلكتروني</span><span class="en-text">Email</span></p>
+                        <p class="font-bold">info@mosabalmasri.com</p>
+                    </div>
+                </div>
+
+                <!-- العنوان والمكتب -->
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-green/10 text-brand-green flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500"><span class="ar-text">العنوان</span><span class="en-text">Location</span></p>
+                        <p class="font-bold"><span class="ar-text">دمشق، الجمهورية العربية السورية</span><span class="en-text">Damascus, Syria</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- استمارة إرسال رسالة سريعة -->
+            <form action="#" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">
+                        <span class="ar-text">الاسم بالكامل</span><span class="en-text">Full Name</span>
+                    </label>
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-sm focus:outline-none focus:border-brand-green">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">
+                        <span class="ar-text">رقم الموبايل / واتساب</span><span class="en-text">Phone / WhatsApp</span>
+                    </label>
+                    <input type="tel" required dir="ltr" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-sm focus:outline-none focus:border-brand-green">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">
+                        <span class="ar-text">الرسالة أو الاستفسار</span><span class="en-text">Message</span>
+                    </label>
+                    <textarea rows="3" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-sm focus:outline-none focus:border-brand-green"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 bg-brand-green hover:bg-brand-greenDark text-brand-gold font-bold rounded-lg transition text-sm">
+                    <span class="ar-text">إرسال الاستفسار</span>
+                    <span class="en-text">Submit Request</span>
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-brand-greenDark border-t border-brand-gold/20 py-8 px-6 text-center text-xs text-gray-400">
+        <p>© 2026 MOSAB ALMASRI Real Estate Development. <span class="ar-text">جميع الحقوق محفوظة.</span><span class="en-text">All rights reserved.</span></p>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            localStorage.setItem('site_lang', lang);
+        }
+        function toggleLanguage() {
+            const current = document.documentElement.lang || 'ar';
+            setLanguage(current === 'ar' ? 'en' : 'ar');
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(localStorage.getItem('site_lang') || 'ar');
+        });
+    </script>
+</body>
+</html>

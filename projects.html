@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المشاريع | مصعب المصري - Projects</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { green: '#0f382c', greenDark: '#0a271f', gold: '#c59b58', goldLight: '#ddb372', sand: '#f6f4ee', charcoal: '#222826' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html[lang="ar"] { font-family: 'Cairo', sans-serif; }
+        html[lang="en"] { font-family: 'Plus Jakarta Sans', sans-serif; }
+        html[lang="ar"] .en-text { display: none !important; }
+        html[lang="en"] .ar-text { display: none !important; }
+    </style>
+</head>
+<body class="bg-brand-sand text-brand-charcoal flex flex-col min-h-screen">
+
+    <!-- شريط التنقل العلوي -->
+    <header class="bg-brand-greenDark/95 border-b border-brand-gold/20 sticky top-0 z-50 text-white">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="MA Logo.png" alt="Logo" class="h-12 w-auto object-contain"> 
+                <div>
+                    <span class="text-xl font-bold tracking-wide text-brand-gold block leading-none">MOSAB ALMASRI</span>
+                    <span class="text-[10px] text-gray-300 tracking-widest uppercase">Real Estate</span>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                <a href="index.html" class="hover:text-brand-gold transition"><span class="ar-text">الرئيسية</span><span class="en-text">Home</span></a>
+                <!-- الرابط المفعّل باللون الذهبي -->
+                <a href="projects.html" class="text-brand-gold"><span class="ar-text">المشاريع</span><span class="en-text">Projects</span></a>
+                <a href="services.html" class="hover:text-brand-gold transition"><span class="ar-text">الخدمات</span><span class="en-text">Services</span></a>
+                <a href="about.html" class="hover:text-brand-gold transition"><span class="ar-text">من نحن</span><span class="en-text">About Us</span></a>
+                <a href="contact.html" class="hover:text-brand-gold transition"><span class="ar-text">تواصل معنا</span><span class="en-text">Contact</span></a>
+            </nav>
+            <button onclick="toggleLanguage()" class="border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-greenDark px-3 py-1.5 rounded text-xs font-bold transition">
+                <span class="ar-text">English</span><span class="en-text">عربي</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- المحتوى: قائمة المشاريع التفاعلية -->
+    <main class="flex-grow max-w-5xl mx-auto px-6 py-12 w-full">
+        <div class="text-center mb-12">
+            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest bg-brand-green px-3 py-1 rounded">
+                <span class="ar-text">سجل الإنجازات</span><span class="en-text">Our Portfolio</span>
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-black text-brand-green mt-3">
+                <span class="ar-text">قائمة المشاريع المنجزة</span>
+                <span class="en-text">Real Estate Projects</span>
+            </h1>
+            <p class="text-gray-600 text-sm mt-2">
+                <span class="ar-text">انقر على أي مشروع لفتح تفاصيله وصوره الكاملة</span>
+                <span class="en-text">Click any project to view full specifications and gallery</span>
+            </p>
+        </div>
+
+        <!-- حاوية الأكورديون (Accordion) -->
+        <div class="space-y-4" id="projectsAccordion">
+
+            <!-- ==================== مشروع رقم 1 ==================== -->
+            <div class="project-item border border-gray-300 rounded-xl overflow-hidden bg-white shadow-sm transition">
+                <!-- زر العنوان الرئيسي للمشروع (النقر عليه يفتحه ويغلق الباقي) -->
+                <button type="button" class="accordion-toggle w-full p-6 flex items-center justify-between text-start hover:bg-gray-50">
+                    <div class="flex items-center gap-4">
+                        <!-- رقم المشروع -->
+                        <div class="w-12 h-12 rounded-lg bg-brand-green text-brand-gold flex items-center justify-center font-black">01</div>
+                        <div>
+                            <!-- اسم المشروع -->
+                            <h3 class="text-xl font-bold text-brand-green">
+                                <span class="ar-text">مجمع النخبة السكني</span>
+                                <span class="en-text">Al-Nokhba Residential Complex</span>
+                            </h3>
+                            <!-- موقع المشروع -->
+                            <p class="text-xs text-gray-500 mt-1">
+                                <i class="fa-solid fa-location-dot text-brand-gold"></i>
+                                <span class="ar-text">دمشق - تنظيم كفرسوسة</span>
+                                <span class="en-text">Damascus - Kafr Sousa</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- سهم الإشارة -->
+                    <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                </button>
+
+                <!-- تفاصيل المشروع المنسدلة (تكون مخفية مبدئياً) -->
+                <div class="accordion-content hidden border-t border-gray-200 p-6 bg-brand-sand/50">
+                    <!-- وصف المشروع -->
+                    <p class="text-gray-700 text-sm leading-relaxed mb-6">
+                        <span class="ar-text">مجمع سكني فندقي متكامل، يتضمن شققاً بمساحات تبدأ من 190 م² وحتى 320 م² مجهزة بنظام العزل الصوتي والحراري ومنظومة طاقة شمسية دائمة.</span>
+                        <span class="en-text">A luxury residential complex offering units from 190m² to 320m², equipped with sound and thermal insulation plus dedicated solar energy systems.</span>
+                    </p>
+                    <!-- معرض صور المشروع (3 صور) -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=500&q=80" class="rounded-lg h-44 w-full object-cover shadow" alt="صورة 1">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" class="rounded-lg h-44 w-full object-cover shadow" alt="صورة 2">
+                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=500&q=80" class="rounded-lg h-44 w-full object-cover shadow" alt="صورة 3">
+                    </div>
+                    <!-- شريط الحالة وزر الحجز عبر الواتساب -->
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-300">
+                        <span class="text-xs font-bold text-brand-green">
+                            <span class="ar-text">حالة المشروع: متاح للحجز</span>
+                            <span class="en-text">Status: Available for Booking</span>
+                        </span>
+                        <!-- عدل رقم هاتفك في الرابط التالي -->
+                        <a href="https://wa.me/963900000000?text=استفسار%20عن%20مجمع%20النخبة" target="_blank" class="bg-brand-green text-brand-gold hover:bg-brand-greenDark px-5 py-2 rounded-lg text-xs font-bold transition flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span class="ar-text">حجز موعد للمعاينة</span>
+                            <span class="en-text">Book Inspection</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== مشروع رقم 2 ==================== -->
+            <div class="project-item border border-gray-300 rounded-xl overflow-hidden bg-white shadow-sm transition">
+                <button type="button" class="accordion-toggle w-full p-6 flex items-center justify-between text-start hover:bg-gray-50">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-brand-green text-brand-gold flex items-center justify-center font-black">02</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-green">
+                                <span class="ar-text">برج الأعمال الاستثماري</span>
+                                <span class="en-text">Commercial Business Tower</span>
+                            </h3>
+                            <p class="text-xs text-gray-500 mt-1">
+                                <i class="fa-solid fa-location-dot text-brand-gold"></i>
+                                <span class="ar-text">موقع تجاري استراتيجي</span>
+                                <span class="en-text">Prime Commercial District</span>
+                            </p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                </button>
+
+                <div class="accordion-content hidden border-t border-gray-200 p-6 bg-brand-sand/50">
+                    <p class="text-gray-700 text-sm leading-relaxed mb-6">
+                        <span class="ar-text">مبنى إداري وتجاري متكامل مهيأ لمقرات الشركات والعيادات والبنوك، مزود بمصاعد ذكية فائقة السرعة، ومواقف سيارات طابقية تحت الأرض.</span>
+                        <span class="en-text">A state-of-the-art office building tailored for corporate headquarters, clinics, and banks, featuring smart high-speed elevators and multi-level parking.</span>
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+                        <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=500&q=80" class="rounded-lg h-44 w-full object-cover shadow" alt="برج 1">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80" class="rounded-lg h-44 w-full object-cover shadow" alt="برج 2">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500&q=80" class="rounded-lg h-44 w-full object-cover shadow" alt="برج 3">
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-300">
+                        <span class="text-xs font-bold text-brand-green">
+                            <span class="ar-text">حالة المشروع: قيد التشطيب النهائي</span>
+                            <span class="en-text">Status: Final Finishing</span>
+                        </span>
+                        <a href="https://wa.me/963900000000?text=استفسار%20عن%20برج%20الأعمال" target="_blank" class="bg-brand-green text-brand-gold hover:bg-brand-greenDark px-5 py-2 rounded-lg text-xs font-bold transition flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span class="ar-text">طلب كشف بالمكاتب المتاحة</span>
+                            <span class="en-text">Request Availability</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== مشروع رقم 3 ==================== -->
+            <div class="project-item border border-gray-300 rounded-xl overflow-hidden bg-white shadow-sm transition">
+                <button type="button" class="accordion-toggle w-full p-6 flex items-center justify-between text-start hover:bg-gray-50">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-brand-green text-brand-gold flex items-center justify-center font-black">03</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-green">
+                                <span class="ar-text">مشروع فلل الربوة</span>
+                                <span class="en-text">Al-Rabwa Private Villas</span>
+                            </h3>
+                            <p class="text-xs text-gray-500 mt-1">
+                                <i class="fa-solid fa-location-dot text-brand-gold"></i>
+                                <span class="ar-text">ريف دمشق - إطلالة جبلية</span>
+                                <span class="en-text">Damascus Countryside - Mountain View</span>
+                            </p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                </button>
+
+                <div class="accordion-content hidden border-t border-gray-200 p-6 bg-brand-sand/50">
+                    <p class="text-gray-700 text-sm leading-relaxed mb-6">
+                        <span class="ar-text">مجمع فلل مستقلة بتصميم مودرن ومسابح خاصة مع مساحات خضراء واسعة ومراعاة أعلى درجات الخصوصية والاستقلالية للأسرة.</span>
+                        <span class="en-text">Independent luxury modern villas with private pools, expansive landscape gardens, and top-tier privacy standards for families.</span>
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=500&q=80" class="rounded-lg h-44 w-full object-cover shadow" alt="فيلا 1">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=500&q=80" class="rounded-lg h-44 w-full object-cover shadow" alt="فيلا 2">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=500&q=80" class="rounded-lg h-44 w-full object-cover shadow" alt="فيلا 3">
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-300">
+                        <span class="text-xs font-bold text-brand-green">
+                            <span class="ar-text">حالة المشروع: بيع على المخطط</span>
+                            <span class="en-text">Status: Off-plan Sales</span>
+                        </span>
+                        <a href="https://wa.me/963900000000?text=استفسار%20عن%20فلل%20الربوة" target="_blank" class="bg-brand-green text-brand-gold hover:bg-brand-greenDark px-5 py-2 rounded-lg text-xs font-bold transition flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span class="ar-text">طلب المخططات والأسعار</span>
+                            <span class="en-text">Request Plans & Price</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- التذييل -->
+    <footer class="bg-brand-greenDark border-t border-brand-gold/20 py-8 px-6 text-center text-xs text-gray-400">
+        <p>© 2026 MOSAB ALMASRI Real Estate Development. <span class="ar-text">جميع الحقوق محفوظة.</span><span class="en-text">All rights reserved.</span></p>
+    </footer>
+
+    <!-- جافاسكريبت التحكم في الأكورديون (فتح الحالي وإغلاق الآخرين تلقائياً) -->
+    <script>
+        document.querySelectorAll('.accordion-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const parent = button.parentElement;
+                const content = parent.querySelector('.accordion-content');
+                const arrow = button.querySelector('.fa-chevron-down');
+                const isAlreadyOpen = !content.classList.contains('hidden');
+
+                // إغلاق كل المشاريع أولاً
+                document.querySelectorAll('.accordion-content').forEach(c => c.classList.add('hidden'));
+                document.querySelectorAll('.fa-chevron-down').forEach(a => a.classList.remove('rotate-180'));
+
+                // إذا كان هذا المشروع مغلقاً، نقوم بفتحه وتدوير السهم
+                if (!isAlreadyOpen) {
+                    content.classList.remove('hidden');
+                    arrow.classList.add('rotate-180');
+                }
+            });
+        });
+
+        // دوال اللغة
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            localStorage.setItem('site_lang', lang);
+        }
+        function toggleLanguage() {
+            const current = document.documentElement.lang || 'ar';
+            setLanguage(current === 'ar' ? 'en' : 'ar');
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(localStorage.getItem('site_lang') || 'ar');
+        });
+    </script>
+</body>
+</html>
