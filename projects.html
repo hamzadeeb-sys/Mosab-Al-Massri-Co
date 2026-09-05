@@ -31,29 +31,64 @@
 <body class="bg-brand-sand text-brand-charcoal flex flex-col min-h-screen">
 
     <!-- شريط التنقل العلوي -->
-    <header class="bg-brand-greenDark/95 border-b border-brand-gold/20 sticky top-0 z-50 text-white">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="MA Logo.png" alt="Logo" class="h-12 w-auto object-contain"> 
-                <div>
-                    <span class="text-xl font-bold tracking-wide text-brand-gold block leading-none">MOSAB ALMASRI</span>
-                    <span class="text-[10px] text-gray-300 tracking-widest uppercase">Real Estate</span>
-                </div>
-            </a>
-            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-                <a href="index.html" class="hover:text-brand-gold transition"><span class="ar-text">الرئيسية</span><span class="en-text">Home</span></a>
-                <!-- الرابط المفعّل باللون الذهبي -->
-                <a href="projects.html" class="text-brand-gold"><span class="ar-text">المشاريع</span><span class="en-text">Projects</span></a>
-                <a href="services.html" class="hover:text-brand-gold transition"><span class="ar-text">الخدمات</span><span class="en-text">Services</span></a>
-                <a href="about.html" class="hover:text-brand-gold transition"><span class="ar-text">من نحن</span><span class="en-text">About Us</span></a>
-                <a href="contact.html" class="hover:text-brand-gold transition"><span class="ar-text">تواصل معنا</span><span class="en-text">Contact</span></a>
-            </nav>
+   <!-- ==================== شريط التنقل المتجاوب (Header) ==================== -->
+<header class="bg-brand-greenDark/95 border-b border-brand-gold/20 sticky top-0 z-50 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        
+        <!-- الشعار -->
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-10 h-10 border-2 border-brand-gold rounded flex items-center justify-center font-bold text-brand-gold">MA</div>
+            <div>
+                <span class="text-xl font-bold tracking-wide text-brand-gold block leading-none">MOSAB ALMASRI</span>
+                <span class="text-[10px] text-gray-300 tracking-widest uppercase">Real Estate</span>
+            </div>
+        </a>
+
+        <!-- روابط الكمبيوتر (مخفية على الموبايل) -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+            <a href="index.html" class="hover:text-brand-gold transition"><span class="ar-text">الرئيسية</span><span class="en-text">Home</span></a>
+            <a href="projects.html" class="hover:text-brand-gold transition"><span class="ar-text">المشاريع</span><span class="en-text">Projects</span></a>
+            <a href="services.html" class="hover:text-brand-gold transition"><span class="ar-text">الخدمات</span><span class="en-text">Services</span></a>
+            <a href="about.html" class="hover:text-brand-gold transition"><span class="ar-text">من نحن</span><span class="en-text">About Us</span></a>
+            <a href="contact.html" class="hover:text-brand-gold transition"><span class="ar-text">تواصل معنا</span><span class="en-text">Contact</span></a>
+        </nav>
+
+        <!-- أزرار الزاوية (اللغة + زر القائمة للموبايل) -->
+        <div class="flex items-center gap-3">
+            <!-- زر تبديل اللغة -->
             <button onclick="toggleLanguage()" class="border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-greenDark px-3 py-1.5 rounded text-xs font-bold transition">
-                <span class="ar-text">English</span><span class="en-text">عربي</span>
+                <span class="ar-text">English</span>
+                <span class="en-text">عربي</span>
+            </button>
+
+            <!-- زر الاستشارة (يظهر للشاشات المتوسطة والكبيرة) -->
+            <a href="contact.html" class="hidden sm:inline-block bg-brand-gold hover:bg-brand-goldLight text-brand-greenDark font-bold px-4 py-2 rounded text-xs transition">
+                <span class="ar-text">استشارة عقارية</span>
+                <span class="en-text">Consultation</span>
+            </a>
+
+            <!-- زر القائمة للموبايل (يظهر فقط على الموبايل) -->
+            <button id="mobileMenuBtn" class="md:hidden text-brand-gold text-2xl focus:outline-none p-1.5 border border-brand-gold/30 rounded-lg">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
             </button>
         </div>
-    </header>
+    </div>
 
+    <!-- قائمة الموبايل المنسدلة (تفتح عند الضغط على الزر) -->
+    <div id="mobileMenu" class="hidden md:hidden bg-brand-greenDark border-b border-brand-gold/20 px-6 py-5 shadow-2xl">
+        <nav class="flex flex-col gap-4 text-base font-semibold">
+            <a href="index.html" class="hover:text-brand-gold transition border-b border-white/5 pb-2"><span class="ar-text">الرئيسية</span><span class="en-text">Home</span></a>
+            <a href="projects.html" class="hover:text-brand-gold transition border-b border-white/5 pb-2"><span class="ar-text">المشاريع</span><span class="en-text">Projects</span></a>
+            <a href="services.html" class="hover:text-brand-gold transition border-b border-white/5 pb-2"><span class="ar-text">الخدمات</span><span class="en-text">Services</span></a>
+            <a href="about.html" class="hover:text-brand-gold transition border-b border-white/5 pb-2"><span class="ar-text">من نحن</span><span class="en-text">About Us</span></a>
+            <a href="contact.html" class="hover:text-brand-gold transition border-b border-white/5 pb-2"><span class="ar-text">تواصل معنا</span><span class="en-text">Contact</span></a>
+            <a href="contact.html" class="bg-brand-gold text-brand-greenDark font-bold py-3 rounded-lg text-center text-sm mt-2">
+                <span class="ar-text">طلب استشارة عقارية</span>
+                <span class="en-text">Request Consultation</span>
+            </a>
+        </nav>
+    </div>
+</header>
     <!-- المحتوى: قائمة المشاريع التفاعلية -->
     <main class="flex-grow max-w-5xl mx-auto px-6 py-12 w-full">
         <div class="text-center mb-12">
@@ -256,7 +291,24 @@
         }
         document.addEventListener('DOMContentLoaded', () => {
             setLanguage(localStorage.getItem('site_lang') || 'ar');
-        });
+        });// فتح وإغلاق قائمة الموبايل
+const menuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuIcon = document.getElementById('menuIcon');
+
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+        const isClosed = mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden');
+        if (isClosed) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-xmark');
+        } else {
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+        }
+    });
+}
     </script>
 </body>
 </html>
